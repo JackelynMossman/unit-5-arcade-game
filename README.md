@@ -1,5 +1,6 @@
 ## Unit 5: Object-Oriented Programming ##
-** Classic Arcade Game **
+**Classic Arcade Game**
+
 This is a simple game built to test a users ability to cross the street and avoid a collision with the moving objects.
 
 ### Rules of the Game ###
