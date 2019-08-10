@@ -1,0 +1,736 @@
+/*
+	uDacity - Front End Developer Nano Degree Program: Unit 5: Object-Oriented Programming
+	Author: Jackelyn Thompson
+	Date: August 10, 2019
+	Program: Front End Developer Nano Degree Program
+	Project: Unit 5 | Classic Arcade Game
+    NOTES: http://www.itwasworthit.ca is owned by me and the content used throughout this project is my original copy either from my personal website and altered for this project or freshly written copy..
+
+	Style Guides
+		- Font Family: "Montserrat", "Helvetica Neue", Helvetica, Arial, "sans-serif"
+		- Colours:
+			Blue: 02b3e4
+			Yellow: feca5c
+			Slate: 2d3c49
+			Grey: 7d97ad
+			White: fff
+			Black: 000
+*/
+
+/* I imported a google webfont named after one of my upcoming vacation destinations font-family: "Montserrat", sans-serif;*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+body {
+	background-color: #fff;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+/* Catch all for max-width */
+img, embed, object, video {
+	max-width: 100%;
+}
+
+.blue { color: #02b3e4; }
+
+.yellow { color: #feca5c; }
+
+.grey { color: #7d97ad; }
+
+.slate { color: #2d3c49; }
+
+.white { color: #fff; }
+
+.black { color: #000; }
+
+/* Start of Header and Navigation Section */
+.headerwrapper {
+	width: 100%;
+	margin: 0;
+	background-color: #fff;
+	text-align: center;
+}
+
+.headertagline {
+	width: 90%;
+}
+
+.headerlogo {
+	padding: 7% 2% 0 0;
+}
+
+.headersubtitle {
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 0.95em;
+	color: #000000;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.menunav {
+	width: 100%;
+	padding-bottom: 4%;
+	padding-top: 4%;
+}
+
+/* Menu Styles: uses a checkbox to open and close the drop down navigation */
+input.menubtn {
+	display: none;
+}
+
+input[type="checkbox"].menubtn ~ .menucollapse {
+	display: none;
+}
+
+input[type="checkbox"]:checked.menubtn ~ .menucollapse {
+	display: block;
+}
+
+label.menubtn {
+	color: #7d97ad;
+	cursor: pointer;
+	display: block;
+	padding: 16px 32px;
+}
+
+label.menubtn:hover {
+	color: #000;
+}
+
+.menunav ul, .menunav li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+
+.menunav a {
+	color: #7d97ad;
+	display: inline-block;
+	padding: 16px 32px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 0.80em;
+}
+
+.menunav a:hover {
+	color: #feca5c;
+}
+
+.menunav a.active {
+	color: #02b3e4;
+}
+
+.menuicon::before {
+	content: "\2630";
+}
+/* End of Header and Navigation Section */
+
+/* Start of Main Section */
+.mainwrapper {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	text-align: center;
+}
+
+.article {
+	width: 100%;
+	margin: 0;
+	border-bottom: 2px #fff solid;
+}
+
+.introwrapper {
+	width: 100%;
+	margin: 0;
+	background: #fff;
+}
+
+.intro {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em 0;
+}
+
+.introwrapper h1 {
+	font-size: 1.75em;
+	margin-bottom: 2px;
+}
+
+.gamearea {
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.article {
+	padding: 0;
+}
+
+.highlight {
+	font-weight: bold;
+	color: #feca5c;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+.articletext {
+	width: 75%;
+	padding: 1em;
+	background: rgba(255, 255, 255, 0.6);
+	margin: 1em 0 1em 1em;
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+.mainwrapper h2 {
+	font-size: 0.90em;
+}
+
+.mainwrapper h3 {
+	font-size: 0.80em;
+}
+
+.mainwrapper p {
+	color: #000;
+	margin-top: 0;
+}
+
+.button {
+	border-radius: 4px;
+	background-color: #000;
+	border: none;
+	color: #fff;
+	text-align: center;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	padding: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	min-width: 50%;
+}
+
+.button a, .button a:link, .button a:active, .button a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+.button:hover {
+	background-color: #2d3c49;
+}
+
+.feature {
+	background-size: cover;
+	width: 100%;
+	border-right: 0;
+	border-left: 0;
+	order: -1;
+	background-color: #000;
+}
+
+.feature .articletext {
+	padding: 1em;
+	width: 80%;
+	margin: 0 auto 1em auto;
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	background-color: #feca5c;
+}
+
+.feature h1 {
+	font-size: 1.2em;
+}
+
+.feature p, .feature ul {
+	font-size: .85em;
+	line-height: 1.5em;
+}
+
+.feature ul {
+	padding-left: 0;
+	width: 90%;
+	list-style-type: none;
+}
+
+.feature ul li:nth-child(1n) {
+	border-bottom: 2px dotted #000;
+	padding: 4px 0;
+}
+
+.fa-heart {
+	color: #ff0000;
+	font-size: 20px;
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-0.5);
+	-webkit-transform: rotate(-10deg);
+	-moz-transform: rotate(-10deg);
+	-ms-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+}
+
+.fa-star {
+	color: #02b3e4;
+}
+
+.scorecard {
+	font-size: 0.95em;
+	text-align: left;
+	margin-bottom: 0px;
+}
+
+.scorecard .stars {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	margin: 0 5px 0 0;
+}
+
+.scorecard .stars li {
+	list-style: none;
+	display: inline-block;
+}
+
+.scorecard .stars li.hidden {
+	margin: 0;
+	padding: 0;
+}
+
+.scorecard #restartgame {
+	background-color: #000;
+	padding: 0.6rem 0.6rem;
+	font-size: 0.95em;
+	width: 10%;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	color: #ffffff;
+	border-radius: 5px;
+	float: right;
+	cursor: pointer;
+}
+
+.scorecard #restartgame a {
+	color: #ffffff;
+}
+
+.timer {
+	display: inline-block;
+	margin: 0 1rem;
+}
+
+.memorycards {
+	width: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.memorycards .card {
+	height: 7rem;
+	width: 7rem;
+	margin: 0.2rem 0.2rem;
+	background: #000;
+	font-size: 0;
+	color: #ffffff;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-webkit-box-shadow: 0px 13px 26px -15px rgba(0,0,0,0.51);
+	-moz-box-shadow: 0px 13px 26px -15px rgba(0,0,0,0.51);
+	box-shadow: 0px 13px 26px -15px rgba(0,0,0,0.51);
+}
+
+.memorycards .card.open {
+	transform: rotateY(0);
+	background: #02b3e4;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+}
+
+.memorycards .card.flip {
+	font-size: 33px;
+}
+
+.memorycards .card.match {
+	background: #feca5c;
+	font-size: 33px;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+}
+
+.memorycards .card.nomatch {
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	background: #7d97ad;
+}
+
+.memorycards .card.disabled {
+	pointer-events: none;
+}
+
+.one {
+	background: #f0f0f0 url(../img/visit-portugal.jpg) center no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+.two {
+	background: #f0f0f0 url(../img/visit-romania.jpg) center no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+.three, .last2 {
+	background: #f0f0f0 url(../img/visit-bulgaria.jpg) center no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+.four, .last {
+	background: #f0f0f0 url(../img/visit-turkey.jpg) center no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+/* End of Main Section */
+
+/* Start of Footer Section */
+footer {
+	width: 100%;
+	margin: 0;
+	background-color: #fff;
+}
+
+.footerwrapper {
+	color: #7d97ad;
+	padding: 1em 2em 1em 1em;
+	font-size: 0.65em;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.footerwrapper p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.footerwrapper a {
+	color: #7d97ad;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.footerwrapper a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+/* End of Footer Section */
+
+/* Start of Popup Section */
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.6);
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+  
+.popup {
+	margin: 30% auto;
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 5px;
+	width: 75%;
+	position: relative;
+}
+  
+.popup h2 {
+	color: #02b3e4;
+	font-size: 2em;
+	text-align: center;
+}
+
+.popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+}
+
+.popup .close:hover {
+	color: #feca5c;
+}
+
+.popup p {
+	text-align: center;
+}
+
+.show {
+	visibility: visible;
+	opacity: 100;
+}
+
+#totalstars li {
+	display: inline-block;
+}
+
+#restartgame {
+	background-color: #000;
+	padding: 0.7rem 1rem;
+	font-size: 1.1rem;
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	color: #ffffff;
+	border: none;
+}
+/* End of Popup Section */
+
+@media screen and (min-width: 400px) and (max-width: 499px) {
+	.menubtn {
+		margin-left: 0.5em;
+	}
+
+	.menunav ul {
+		margin-top: 5%;
+	}
+}
+
+@media screen and (max-width: 499px) {
+	.headertagline {
+		width: 70%;
+		float: right;
+		text-align: right;
+		margin-right: 1em;
+	}
+
+	.headersubtitle {
+		font-size: 0.75em;
+	}
+
+	.menubtn {
+		text-align: left;
+	}
+	
+	.memorycards .card {
+		height: 5rem;
+		width: 5rem;
+	}
+	
+	.scorecard #restartgame {
+		padding: 0.5rem 0.10rem 0.5rem 0.2rem;
+		font-size: 0.65em;
+		width: 10%;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.headertagline {
+		width: 100%;
+		float: none;
+		text-align: center;
+	}
+
+	.headerlogo {
+		width: 75%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.headersubtitle {
+		font-size: 1em;
+	}
+
+	.menunav ul {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.menunav li {
+		display: inline-block;
+	}
+
+	.menunav a {
+		padding: 14px;
+		font-size: 0.95em;
+	}
+
+	input.menubtn, label.menubtn {
+		display: none;
+	}
+
+	input[type="checkbox"].menubtn ~ .menucollapse, .menucollapse {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.one, .two, .three, .four {
+		width: 49.5%;
+	}
+
+	.last, .last2 {
+		width: 100%;
+	}
+
+	.one, .three {
+		border-right: 2px #fff solid;
+		border-left: 1px #fff solid;
+	}
+
+	.two, .four, .last, .last2 {
+		border-left: 2px #fff solid;
+		border-right: 1px #fff solid;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 899px) {
+	.memorycards .card {
+		height: 6rem;
+		width: 6rem;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.introwrapper {
+		width: 60%;
+		border: 0;
+	}
+
+	.feature{
+		width: 39.5%;
+		order: -1;
+		border-right: 0;
+	}
+
+	.one, .three, .two, .four {
+		width: 49.5%;
+	}
+
+	.one, .three {
+		border-left: 2px #fff solid;
+		border-right: 1px #fff solid;
+	}
+
+	.two, .four {
+		border-left: 1px #fff solid;
+		border-right: 2px #fff solid;
+	}
+
+	.last, .last2 {
+		border-left: 2px #fff solid;
+		border-right: 2px #fff solid;
+	}
+
+	.one h1, .two h1, .three h1, .four h1, .last h1, .last2 h1 {
+		font-size: 0.95em;
+		text-transform: uppercase;
+	}
+
+	.one p, .two p, .three p, .four p, .last p, .last2 p {
+		font-size: 0.75em;
+	}
+
+}
+
+@media screen and (min-width: 800px) {
+	.headertagline {
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 3%;
+	}
+
+	.headersubtitle {
+		font-size: 0.95em;
+	}
+
+	.menunav {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.menunav li {
+		display: inline-block;
+	}
+
+	.menunav a {
+		padding: 16px;
+	}
+
+	input.menubtn, label.menubtn {
+		display: none;
+	}
+
+	input[type="checkbox"].menubtn ~ .menucollapse, .menucollapse {
+		display: block;
+	}
+
+	.one, .two, .three, .four, .last, .last2 {
+		width: 32.8%;
+	}
+
+	.half {
+		width: 49%;
+	}
+
+	.articletext {
+		width: 65%;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.headerwrapper, .mainwrapper, footer {
+		width: 900px;
+		margin: 0 auto;
+	}
+
+	.headertagline {
+		width: 500px;
+	}
+
+	.introwrapper {
+		width: 70%;
+		order: -1;
+	}
+
+	.feature {
+		width: 29.5%;
+		order: 1;
+	}
+
+	.one, .two, .three, .four {
+		width: 24.55%;
+		order: 2;
+		border-left: 2px #fff solid;
+		border-right: 2px #fff solid;
+	}
+
+	.last, .last2 {
+		width: 49.5%;
+		order: 4;
+		border-left: 2px #fff solid;
+		border-right: 2px #fff solid;
+	}
+}

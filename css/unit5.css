@@ -1,0 +1,37 @@
+/*
+	uDacity - Front End Developer Nano Degree Program: Unit 5: Object-Oriented Programming
+	Author: Jackelyn Thompson
+	Date: August 10, 2019
+	Program: Front End Developer Nano Degree Program
+	Project: Unit 5 | Classic Arcade Game
+    NOTES: http://www.itwasworthit.ca is owned by me and the content used throughout this project is my original copy either from my personal website and altered for this project or freshly written copy..
+
+	Style Guides
+		- Font Family: "Montserrat", "Helvetica Neue", Helvetica, Arial, "sans-serif"
+		- Colours:
+			Blue: 02b3e4
+			Yellow: feca5c
+			Slate: 2d3c49
+			Grey: 7d97ad
+			White: fff
+			Black: 000
+*/
+
+canvas {
+	margin: -50px auto 0 auto;
+	text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+	.introwrapper {
+		width: 100%;
+		border: 0;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.introwrapper {
+		width: 100%;
+		order: -1;
+	}
+}

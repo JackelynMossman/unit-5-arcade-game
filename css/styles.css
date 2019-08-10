@@ -1,0 +1,497 @@
+/*
+	uDacity - Front End Developer Nano Degree Program: Unit 5: Object-Oriented Programming
+	Author: Jackelyn Thompson
+	Date: August 10, 2019
+	Program: Front End Developer Nano Degree Program
+	Project: Unit 5 | Classic Arcade Game
+    NOTES: http://www.itwasworthit.ca is owned by me and the content used throughout this project is my original copy either from my personal website and altered for this project or freshly written copy..
+
+	Style Guides
+		- Font Family: "Montserrat", "Helvetica Neue", Helvetica, Arial, "sans-serif"
+		- Colours:
+			Blue: 02b3e4
+			Yellow: feca5c
+			Slate: 2d3c49
+			Grey: 7d97ad
+			White: fff
+			Black: 000
+*/
+
+/* I imported a google webfont named after one of my upcoming vacation destinations font-family: "Montserrat", sans-serif;*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+body {
+	background-color: #fff;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+/* Catch all for max-width */
+img, embed, object, video {
+	max-width: 100%;
+}
+
+.blue { color: #02b3e4; }
+
+.yellow { color: #feca5c; }
+
+.grey { color: #7d97ad; }
+
+.slate { color: #2d3c49; }
+
+.white { color: #fff; }
+
+.black { color: #000; }
+
+/* Start of Header and Navigation Section */
+.headerwrapper {
+	width: 100%;
+	margin: 0;
+	background-color: #fff;
+	text-align: center;
+}
+
+.headertagline {
+	width: 90%;
+}
+
+.headerlogo {
+	padding: 7% 2% 0 0;
+}
+
+.headersubtitle {
+	font: 0.95em "Montserrat", "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	color: #000000;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.menunav {
+	width: 100%;
+	padding-bottom: 5%;
+	padding-top: 5%;
+}
+
+/* Menu Styles: uses a checkbox to open and close the drop down navigation */
+input.menubtn {
+	display: none;
+}
+
+input[type="checkbox"].menubtn ~ .menucollapse {
+	display: none;
+}
+
+input[type="checkbox"]:checked.menubtn ~ .menucollapse {
+	display: block;
+}
+
+label.menubtn {
+	color: #7d97ad;
+	cursor: pointer;
+	display: block;
+	padding: 16px 32px;
+}
+
+label.menubtn:hover {
+	color: #000;
+}
+
+.menunav ul, .menunav li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+
+.menunav a {
+	color: #7d97ad;
+	display: inline-block;
+	padding: 16px 32px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 0.80em;
+}
+
+.menunav a:hover {
+	color: #feca5c;
+}
+
+.menunav a.active {
+	color: #02b3e4;
+}
+
+.menuicon::before {
+	content: "\2630";
+}
+/* End of Header and Navigation Section */
+
+/* Start of Main Section */
+.mainwrapper {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.article {
+	width: 100%;
+	margin: 0;
+	border-bottom: 2px #fff solid;
+}
+
+.introwrapper {
+	width: 100%;
+	margin: 0;
+	background: #fff;
+}
+
+.introwrapper {
+	/* I used this gradient generator: http://colorzilla.com/gradient-editor/#fcb21e+0,fcd27e+58,f7d185+67,fcd27e+100 */
+	background: #87e0fd;
+	background: -moz-linear-gradient(top, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+	background: -webkit-linear-gradient(top, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+	background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#87e0fd", endColorstr="#05abe0",GradientType=0 );
+}
+
+.intro {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2em 0;
+}
+
+.introtext {
+	font-size: 0.95em;
+}
+
+.introtext:after {
+    display: block;
+    clear: both;
+    content: "";
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 25%;
+	padding: 3% 0;
+    border-bottom: 5px solid #fff;
+}
+
+.article {
+	padding: 0;
+}
+
+.highlight {
+	font-weight: bold;
+	color: #feca5c;
+	font-size: 1.25em;
+	text-transform: uppercase;
+}
+
+.articletext {
+	width: 75%;
+	padding: 1em;
+	background: rgba(255, 255, 255, 0.6);
+	margin: 1em 0 1em 1em;
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+.mainwrapper h2 {
+	font-size: 0.90em;
+}
+
+.mainwrapper h3 {
+	font-size: 0.80em;
+}
+
+.mainwrapper p {
+	color: #000;
+	margin-top: 0;
+}
+
+.button {
+	border-radius: 4px;
+	background-color: #000;
+	border: none;
+	color: #fff;
+	text-align: center;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	padding: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	min-width: 50%;
+}
+
+.button a, .button a:link, .button a:active, .button a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+.button:hover {
+	background-color: #2d3c49;
+}
+
+.one {
+	background: #f0f0f0 url(../img/visit-portugal.jpg) center no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+.two {
+	background: #f0f0f0 url(../img/visit-romania.jpg) center no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+.three {
+	background: #f0f0f0 url(../img/visit-bulgaria.jpg) center no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+.four {
+	background: #f0f0f0 url(../img/visit-turkey.jpg) center no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+/* End of Main Section */
+
+/* Start of Footer Section */
+footer {
+	width: 100%;
+	margin: 0;
+	background-color: #fff;
+}
+
+.footerwrapper {
+	color: #7d97ad;
+	padding: 1em 2em 1em 1em;
+	font-size: 0.65em;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.footerwrapper p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.footerwrapper a {
+	color: #7d97ad;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.footerwrapper a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+/* End of Footer Section */
+
+@media screen and (min-width: 400px) and (max-width: 499px) {
+	.menubtn {
+		margin-left: 0.5em;
+	}
+
+	.menunav ul {
+		margin-top: 5%;
+	}
+}
+
+@media screen and (max-width: 499px) {
+	.headertagline {
+		width: 70%;
+		float: right;
+		text-align: right;
+		margin-right: 1em;
+	}
+
+	.headersubtitle {
+		font-size: 0.75em;
+	}
+
+	.menubtn {
+		text-align: left;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.headertagline {
+		width: 100%;
+		float: none;
+		text-align: center;
+	}
+
+	.headerlogo {
+		width: 75%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.headersubtitle {
+		font-size: 1em;
+	}
+
+	.menunav ul {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.menunav li {
+		display: inline-block;
+	}
+
+	.menunav a {
+		padding: 14px;
+		font-size: 0.95em;
+	}
+
+	input.menubtn, label.menubtn {
+		display: none;
+	}
+
+	input[type="checkbox"].menubtn ~ .menucollapse, .menucollapse {
+		display: block;
+	}
+
+}
+
+@media screen and (min-width: 600px) {
+	.one, .two, .three, .four {
+		width: 49.5%;
+	}
+
+	.one {
+		order: 4;
+	}
+
+	.one, .three {
+		border-right: 2px #fff solid;
+		border-left: 1px #fff solid;
+	}
+
+	.two, .four {
+		border-left: 2px #fff solid;
+		border-right: 1px #fff solid;
+	}
+}
+
+
+@media screen and (min-width: 700px) {
+	.introwrapper {
+		width: 60%;
+	}
+
+	.one {
+		width: 39.5%;
+		order: -1;
+		border-right: 0;
+	}
+
+	.two, .three, .four {
+		width: 33%;
+	}
+
+	.three {
+		border-left: 0;
+		border-right: 0;
+	}
+
+	.introwrapper, .two, .four {
+		border-left: 1px #fff solid;
+		border-right: 1px #fff solid;
+	}
+
+	.two h1, .three h1, .four h1 {
+		font-size: 0.95em;
+		text-transform: uppercase;
+	}
+
+	.two p, .three p, .four p {
+		font-size: 0.75em;
+	}
+
+	.three {
+		border-right: 2px #fff solid;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.headertagline {
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 3%;
+	}
+
+	.headersubtitle {
+		font-size: 0.95em;
+	}
+
+	.menunav {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.menunav li {
+		display: inline-block;
+	}
+
+	.menunav a {
+		padding: 14px;
+	}
+
+	input.menubtn, label.menubtn {
+		display: none;
+	}
+
+	input[type="checkbox"].menubtn ~ .menucollapse, .menucollapse {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.headerwrapper, .mainwrapper, footer {
+		width: 900px;
+		margin: 0 auto;
+	}
+
+	.headertagline {
+		width: 500px;
+	}
+
+	.one, .two{
+		width: 33%;
+	}
+	
+	.two h1 {
+		font-size: 2em;
+		text-transform: none;
+	}
+	
+	.two p {
+		font-size: 1em;
+	}
+
+	.introwrapper {
+		width: 33.3%;
+	}
+
+	.three, .four {
+		width: 49.75%;
+	}
+
+	.one {
+		order: -1;
+	}
+
+}
